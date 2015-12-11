@@ -1,3 +1,4 @@
+library(sqldf)
 powerconsumption<-read.csv.sql("C:/Users/youngj/downloads/household_power_consumption.txt",
                                sql="select* from file WHERE Date in  ('1/2/2007', '2/2/2007')", header=TRUE, sep=";")
 powerconsumption$NewDate <- as.POSIXct(paste(powerconsumption$Date, powerconsumption$Time,sep=" "), format="%d/%m/%Y %H:%M:%S")
